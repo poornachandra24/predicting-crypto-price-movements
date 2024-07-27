@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "predicting-crypto-price-movements"
+version = "0.1.0"
+description = "MLOps frameworks and tools needed to build ML systems for predicting crypto price movements"
+authors = ["Poornachandra24 <iris24244242@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+requests = "^2.30.0"
+fire = "^0.5.0"
+pyarrow = "^12.0.0"
+ta = "^0.10.2"
+notebook = "^6.5.4"
+scikit-learn = "^1.2.2"
+xgboost = "^1.7.5"
+lightgbm = "^3.3.5"
+optuna = "^3.1.1"
+comet-ml = "3.32.6"
+cerebrium = "^1.1.1"
+torch = "1.13.1"
+pydantic = "^2.1.1"
+scipy = "^1.14.0"
+numpy = "1.25.1"
+pandas = "2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
