@@ -8,3 +8,6 @@ init:
 	
 data:
 	poetry run python src/data.py
+
+baseline:
+	poetry run python src/baseline_model.py
