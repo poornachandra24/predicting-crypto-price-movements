@@ -1,10 +1,21 @@
+SHELL := /bin/bash
 .PHONY: init data baseline train deploy prepare-deployment test-endpoint
-
-DEPLOYMENT_DIR = deployment-dir
-
+DEPLOYMENT_DIR := deployment-dir
+POETRY_BIN := $(HOME)/.local/bin/poetry
 init:
-	curl -sSL https://install.python-poetry.org | python3 -
-	poetry install
+	@if ! command -v poetry &> /dev/null; then \
+		echo "Poetry is not installed. Installing..."; \
+		curl -sSL https://install.python-poetry.org | python3 -; \
+	    echo 'export PATH="$(HOME)/.local/bin:$$PATH"' >> ~/.bashrc; \
+	    source ~/.bashrc; \
+	else \
+		 echo "Poetry is already installed."; \
+    fi
+	@if ! $(POETRY_BIN) --version &> /dev/null; then \
+         echo "Poetry could not run correctly. Please ensure Poetry is in your PATH, then try again."; \
+         exit 1; \
+    fi;
+	poetry install || (poetry lock --no-update && poetry install)	
 	
 data:
 	poetry run python src/data.py
