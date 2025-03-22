@@ -62,7 +62,9 @@ The project is organized as follows:
 This project leverages a serverless stack:
 
 *   **CometML:**  Used for experiment tracking (tracking model training runs, metrics, etc.) and as a model registry (storing and versioning trained models).
+    ![alt text](<images/Screenshot from 2025-03-22 21-59-21.png>)
 *   **Cerebrium:**  The deployment platform.  Provides a serverless environment for hosting the prediction API.
+    ![alt text](<images/Screenshot from 2025-03-22 22-12-45.png>)
 *   **GitHub Actions:**  Automates workflows such as data fetching, model training, and deployment.  This ensures consistency and reproducibility.
 
 ## Quick Start (5-Minute Demo)
